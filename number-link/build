@@ -1,0 +1,7 @@
+#!/bin/bash
+set -ex
+
+cd "$(dirname "$0")"
+clang++ -O3 -std=c++14 -stdlib=libc++ \
+        $(pkg-config --libs --cflags minisat) \
+        -o main main.cc

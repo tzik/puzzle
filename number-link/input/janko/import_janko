@@ -1,0 +1,10 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+mkdir -p arukone{,2,3}
+for i in arukone{,2,3}-html/*.a.htm; do
+  d="$(dirname "$i")"
+  x="$(basename "$i")"
+  dest="${d%-html}/${x%.a.htm}.txt"
+  sed -n -f extract.sed "$i" | ./to_compact_format.py > "${dest}"
+done

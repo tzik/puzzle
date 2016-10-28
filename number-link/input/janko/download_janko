@@ -1,0 +1,18 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+mkdir -p arukone{,2,3}-html
+
+for i in {001..320}; do
+  curl -o "arukone-html/${i}.a.htm" "http://www.janko.at/Raetsel/Arukone/${i}.a.htm"
+  sleep 3
+done
+
+for i in {001..010}; do
+  curl -o "arukone2-html/${i}.a.htm" "http://www.janko.at/Raetsel/Arukone-2/${i}.a.htm"
+  sleep 3
+done
+
+for i in {001..270}; do
+  curl -o "arukone3-html/${i}.a.htm" "http://www.janko.at/Raetsel/Arukone-3/${i}.a.htm"
+  sleep 3
+done
